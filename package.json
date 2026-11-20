@@ -1,0 +1,35 @@
+{
+  "name": "dlint-rules",
+  "version": "0.1.0",
+  "description": "oxlint の JS プラグインとして配布する独自 lint ルール集",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "oxlint",
+    "prepare": "pnpm run build"
+  },
+  "peerDependencies": {
+    "oxlint": ">=1.94.0"
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "1.94.0",
+    "@types/node": "^22.20.5",
+    "oxlint": "1.94.0",
+    "typescript": "~5.8.3",
+    "vitest": "^5.1.1"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "private": true
+}
